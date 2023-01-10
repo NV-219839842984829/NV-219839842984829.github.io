@@ -14,8 +14,8 @@ elCalcQuad.onclick = function(){
         let det = bValue**2 - 4 * aValue * cValue
         if (det < 0){
             let absoluteDet = Math.abs(det)
-            let root1 = "("+-bValue+"+"+absoluteDet+"i)/"+2*aValue;
-            let root2 = "("+-bValue+"-"+absoluteDet+"i)/"+2*aValue;
+            let root1 = "("+-bValue+"+"+Math.sqrt(absoluteDet)+"i)/"+2*aValue;
+            let root2 = "("+-bValue+"-"+Math.sqrt(absoluteDet)+"i)/"+2*aValue;
                 elRoot1.value = root1
                 elRoot2.value = root2
         } else {

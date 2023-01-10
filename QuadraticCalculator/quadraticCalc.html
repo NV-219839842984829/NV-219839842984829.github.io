@@ -1,27 +1,25 @@
-let elAValue = document.getElementById("a-value");
-let elBValue = document.getElementById("b-value");
-let elCValue = document.getElementById("c-value");
-let elCalcQuad = document.getElementById("calc-quad");
-let elRoot1 = document.getElementById("root-1");
-let elRoot2 = document.getElementById("root-2");
-
-
-
-elCalcQuad.onclick = function(){
-    let aValue = elAValue.value
-    let bValue = elBValue.value
-    let cValue = elCValue.value
-        let det = bValue**2 - 4 * aValue * cValue
-        if (det < 0){
-            let absoluteDet = Math.abs(det)
-            let root1 = "("+-bValue+"+"+Math.sqrt(absoluteDet)+"i)/"+2*aValue;
-            let root2 = "("+-bValue+"-"+Math.sqrt(absoluteDet)+"i)/"+2*aValue;
-                elRoot1.value = root1
-                elRoot2.value = root2
-        } else {
-            let root1 = (-bValue + Math.sqrt(det)) / ( 2 * aValue)
-            let root2 = (-bValue - Math.sqrt(det)) / ( 2 * aValue)
-                elRoot1.value = root1
-                elRoot2.value = root2
-        }  
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="quadraticCalc.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Quadratic Calculator</h1>
+        <h2>Input in Standard Form (ax^2+bx=0)</h2>
+            A=<textarea id="a-value" cols="4" rows="1"></textarea>
+            B=<textarea id="b-value" cols="4" rows="1"></textarea>
+            C=<textarea id="c-value" cols="4" rows="1"></textarea>
+            <br>
+            <br>
+            <button id="calc-quad">Calculate!</button>
+            <br>
+            <br>
+            Root 1=<textarea id="root-1" cols="18" rows="1"></textarea>
+            Root 2=<textarea id="root-2" cols="18" rows="1"></textarea>
+        <h4>If both roots have the same output, then the quadratic has only 1 solution</h4>
+</body>
+</html>
